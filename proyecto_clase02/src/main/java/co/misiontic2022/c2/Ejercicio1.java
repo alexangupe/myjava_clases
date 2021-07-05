@@ -15,15 +15,11 @@ public class Ejercicio1 {
         int valorMes = Integer.parseInt(arregloFecha[1]);
         int valorAño = Integer.parseInt(arregloFecha[2]);
 
-/*      System.out.println("Valor dia: " + valorDia);
-        System.out.println("Valor mes: " + valorMes);
-        System.out.println("Valor año: " + valorAño); */
-
         int sumaPartesFechas = valorDia + valorMes + valorAño;
 
-        String sumatoriaCadena = Integer.toString(sumaPartesFechas);
-        for (int i = 0; i < sumatoriaCadena.length(); i++) {
-            numeroSuerte += getnumeric sumatoriaCadena.charAt(i);
+        while (sumaPartesFechas > 0) {
+            numeroSuerte += sumaPartesFechas % 10;
+            sumaPartesFechas = (sumaPartesFechas / 10);
         }
 
         return numeroSuerte;
@@ -46,7 +42,7 @@ public class Ejercicio1 {
     }
     public static void main(String[] args) {
         saludo();
-        reportarNumeroSuerte(obtenerNumeroSuerte(leerFecha()););
+        reportarNumeroSuerte(obtenerNumeroSuerte(leerFecha()));
     }
     
 }
